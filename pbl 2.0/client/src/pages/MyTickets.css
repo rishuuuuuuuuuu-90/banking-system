@@ -1,0 +1,269 @@
+.my-tickets-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.my-tickets-header {
+  margin-bottom: 2rem;
+}
+
+.my-tickets-header h1 {
+  font-size: 2rem;
+  color: #1e3a5f;
+  margin-bottom: 0.25rem;
+}
+
+.my-tickets-header p {
+  color: #64748b;
+}
+
+.tickets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.ticket-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  overflow: hidden;
+  border-top: 4px solid #2563eb;
+  transition: transform 0.2s;
+}
+
+.ticket-card:hover {
+  transform: translateY(-2px);
+}
+
+.ticket-card--used {
+  border-top-color: #94a3b8;
+  opacity: 0.75;
+}
+
+.ticket-card__event {
+  padding: 1rem 1.25rem 0.5rem;
+}
+
+.ticket-card__event h3 {
+  font-size: 1rem;
+  color: #1e3a5f;
+  margin: 0 0 0.4rem 0;
+}
+
+.ticket-date,
+.ticket-venue {
+  font-size: 0.82rem;
+  color: #64748b;
+  margin: 0.2rem 0;
+}
+
+.ticket-card__info {
+  padding: 0.5rem 1.25rem;
+  border-top: 1px dashed #e2e8f0;
+  border-bottom: 1px dashed #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.ticket-number,
+.ticket-amount {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
+
+.ticket-number .label,
+.ticket-amount .label {
+  color: #94a3b8;
+}
+
+.ticket-number .value {
+  font-family: monospace;
+  font-weight: 600;
+  color: #374151;
+}
+
+.ticket-amount .value {
+  font-weight: 700;
+  color: #2563eb;
+}
+
+.ticket-status-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.status-badge {
+  font-size: 0.72rem;
+  padding: 2px 10px;
+  border-radius: 12px;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.status-success { background: #dcfce7; color: #166534; }
+.status-warning { background: #fef3c7; color: #92400e; }
+.status-error { background: #fee2e2; color: #991b1b; }
+.status-info { background: #dbeafe; color: #1e40af; }
+
+.used-badge {
+  font-size: 0.72rem;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+.ticket-card__qr {
+  padding: 0.75rem 1.25rem;
+}
+
+.btn-show-qr {
+  width: 100%;
+  padding: 0.55rem;
+  background: #eff6ff;
+  color: #2563eb;
+  border: 1.5px solid #bfdbfe;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-show-qr:hover {
+  background: #dbeafe;
+}
+
+.qr-display {
+  text-align: center;
+  margin-top: 0.75rem;
+}
+
+.qr-image {
+  width: 160px;
+  height: 160px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.qr-hint {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin-top: 0.25rem;
+}
+
+.scanned-info {
+  padding: 0.5rem 1.25rem;
+  font-size: 0.8rem;
+  color: #6b7280;
+  background: #f8fafc;
+}
+
+.no-tickets {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: #94a3b8;
+}
+
+.no-tickets span {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.no-tickets p {
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+}
+
+.browse-link {
+  display: inline-block;
+  padding: 0.65rem 1.5rem;
+  background: #2563eb;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.browse-link:hover {
+  background: #1d4ed8;
+}
+
+.loading {
+  text-align: center;
+  padding: 3rem;
+  color: #64748b;
+}
+
+.error-msg {
+  text-align: center;
+  color: #ef4444;
+  padding: 1rem;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.page-btn {
+  padding: 0.5rem 1rem;
+  border: 1.5px solid #d1d5db;
+  background: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.page-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* QR Modal */
+.qr-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.qr-modal {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  max-width: 320px;
+  width: 90%;
+  position: relative;
+}
+
+.qr-modal-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: #f1f5f9;
+  border: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.qr-modal-image {
+  width: 220px;
+  height: 220px;
+  margin-bottom: 1rem;
+}
